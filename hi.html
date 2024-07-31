@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Code Verification</title>
+</head>
+<body>
+    <h1>Enter the Code</h1>
+    <form onsubmit="verifyCode(event)">
+        <label for="code">Code:</label>
+        <input type="text" id="code" name="code" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function verifyCode(event) {
+            event.preventDefault();
+            const code = document.getElementById('code').value;
+            const result = document.getElementById('result');
+
+            const correctCode = '1669661';  // Set your correct code here
+
+            if (code === correctCode) {
+                result.innerHTML = `
+                    <p>Your code is correct!</p>
+                    <p>Now You'll know the reason for I sending you my spectacles</p>
+                    <p>Enter this URL in you browser </p>
+<p>This is the url:    https://drive.google.com/drive/folders/1EEBD09aFZkwXTZ4jTr3dp8AF38rnv73D </p>
+<p>Enter this into your browser carefully</p>
+                `;
+                result.style.color = 'green';
+            } else {
+                result.innerHTML = `
+                    <p>Invalid code!</p>
+                    <p>Please try again.</p>
+                    <p>Ensure you have the correct code and try entering it again.</p>
+<p>Please read the correct code from the page that was sent to you along with my spectacles</p>
+
+                `;
+                result.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
